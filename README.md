@@ -449,6 +449,10 @@ Overrides the default PostgreSQL log directory. Default: initdb's default path.
 
 Sets up official PostgreSQL repositories on your host if set to true. Default: false.
 
+##### `module_workdir`
+
+Specifies working directory under which the psql command should be executed. May need to specify if /tmp is on volume mounted with noexec option. Default: /tmp
+
 ##### `needs_initdb`
 
 Explicitly calls the initdb operation after the server package is installed and before the PostgreSQL service is started. Default: OS dependent.
@@ -500,6 +504,10 @@ Path to your `recovery.conf` file.
 ##### `repo_proxy`
 
 Sets the proxy option for the official PostgreSQL yum-repositories only. Debian is currently not supported. This is useful if your server is behind a corporate firewall and needs to use proxyservers for outside connectivity.
+
+##### `repo_baseurl`
+
+Sets the baseurl for the PostgreSQL repository. Useful if you host your own mirror of the repository. Defaults to the official PostgreSQL repository.
 
 ##### `server_package_name`
 
